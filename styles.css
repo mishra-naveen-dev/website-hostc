@@ -1,176 +1,162 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  background: #f8fff5;
-  color: #000;
-}
-
-header .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header {
+  position: fixed;
+  top: 0;
   width: 100%;
-  padding: 20px 0px 15px 10px;
-  position: sticky;
-  margin-top: 1rem;
-  background: #f8fff5;
+  z-index: 1000;
 }
-header .imgdiv img {
-  border-radius: 5px;
-  margin-left: 5rem;
-  height: auto;
-}
-header nav {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-}
-header nav ul {
-  display: flex;
-  text-decoration: none;
-  align-items: center;
-  color: #000;
-  padding-left: 10rem;
-}
-header nav ul li {
-  position: relative;
+.navbar-nav .nav-item {
   font-size: 18px;
   font-family: "Outfit", sans-serif;
-  padding: 10px 20px;
   transition: color 0.3s ease;
   list-style: none;
   cursor: pointer;
+  margin: 15px;
 }
-header nav ul li a {
-  text-decoration: none;
+.navbar-nav .nav-item a {
   color: #000;
 }
-header nav ul li a:hover {
+.navbar-nav .nav-item a:hover {
   color: #03c343;
   transition: color 0.3s ease;
 }
 
-.header-container .btndiv {
+.btndiv {
+  display: inline-block;
+  position: relative;
+}
+
+.get-started-btn {
+  position: relative;
   background-color: #03c343;
-  border-radius: 5px;
-  color: #fff;
-  font-family: "Outfit", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 2rem;
-  height: 55px;
-  width: 13%;
-  cursor: pointer;
-}
-
-.header-container .btndiv a {
-  font-size: 19px;
+  color: #ffffff;
   font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 18px;
+  padding: 0.8rem 1.8rem;
+  border-radius: 12px;
   text-decoration: none;
-  color: #fff;
-}
-
-.header-container .btndiv a span {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  width: 50px;
-  height: 50px;
-}
-.header-container .btndiv a span {
-  border-radius: 50%;
-  display: flex;
-  background-color: #4ce27e;
-  color: #fff;
-  opacity: 1.3;
+  gap: 0.6rem;
+  overflow: hidden;
+  transition: background-color 0.4s ease;
+  z-index: 1;
+  border: none;
 }
 
-.header-container .btndiv:hover,
-.header-container .btndiv a:hover,
-.header-container .btndiv a span:hover {
+/* Hover background */
+.get-started-btn:hover {
   background-color: #000;
   color: #fff;
-  transition: background-color 0.3s ease;
-}
-/* hero section */
-.hero {
-  margin-top: 1rem;
 }
 
-.hero .container {
-  display: flex;
-  width: 100%;
-
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
-.container .left {
-  flex: 1;
-  background-color: #f8fff5;
-  padding: 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.container .left h2 {
-  margin-bottom: 20px;
-  color: #03c343;
-  background-color: #eee;
-  padding-left: 0;
-}
-.container .left h1 {
-  margin-bottom: 20px;
-  color: #000;
-  flex-wrap: wrap;
-  font-size: 36px;
-  font-weight: bold;
-}
-.container .left p {
-  color: #666;
-  line-height: 1.5;
-}
-
-.container .left button {
-  background-color: #03c343;
-  display: flex;
-
-  flex-direction: column;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.container .left .btns a {
-  text-decoration: none;
-  color: #fff;
+/* Arrow animation */
+.get-started-btn .arrow {
+  display: inline-block;
+  transition: transform 0.4s ease;
   font-size: 18px;
-  gap: 10px;
-  margin: auto;
+  color: inherit;
 }
-.hero .container .right {
-  flex: 1;
+
+.get-started-btn:hover .arrow {
+  transform: translate(5px, -5px);
+}
+
+/* Circle behind text */
+.glow-circle {
+  position: absolute;
+  width: 40px;
+  height: 39px;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  padding: 2rem;
+  top: 50%;
+  left: 9.5px;
+  transform: translateY(-50%);
+  z-index: 0;
 }
-.container .right img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+/* Arrow Animation */
+.btndiv .get-started-btn .arrow {
+  display: inline-block;
+  transition: transform 0.4s ease, color 0.4s ease;
 }
-.container .right img:hover {
-  transform: scale(1.05);
+
+.btndiv .get-started-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btndiv .get-started-btn:hover .arrow {
+  transform: translate(5px, -5px);
+  color: #ffffff;
+}
+
+.hero-section {
+  background-color: #f9fff6;
+}
+
+.badge-text {
+  background-color: rgba(3, 195, 67, 0.1);
+  color: #03c343;
+  font-weight: 500;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.get-started-btn {
+  background-color: #03c343;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.explore-btn {
+  font-weight: 600;
+  font-size: 18px;
+  border: 2px solid #03c343;
+  color: #03c343;
+  background-color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+  background-color: #03c343;
+  color: #fff;
+}
+
+.arrow {
+  display: inline-block;
   transition: transform 0.3s ease;
+}
+
+.get-started-btn:hover .arrow,
+.explore-btn:hover .arrow {
+  transform: translate(5px, -5px);
+}
+
+/* Hero image animation */
+.hero-img {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
