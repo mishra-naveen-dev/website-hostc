@@ -1,8 +1,15 @@
+html {
+  scroll-behavior: smooth;
+  transition: transform 0.4s ease;
+}
+
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 .navbar-nav .nav-item {
   font-size: 18px;
@@ -90,10 +97,15 @@ header {
   color: #ffffff;
 }
 
-.hero-section {
-  background-color: #f9fff6;
+main {
+  padding-top: 10px; /* Add padding instead of margin */
 }
 
+.hero-section {
+  padding-top: 60px; /* or if hero is first section */
+  background-color: #f9fff6;
+  border: none;
+}
 .badge-text {
   background-color: rgba(3, 195, 67, 0.1);
   color: #03c343;
@@ -159,4 +171,17 @@ header {
   50% {
     transform: translateY(-10px);
   }
+}
+
+.lead {
+  font-size: 18px;
+  padding: 16px 0px 0px;
+  color: #415069;
+  font-family: "Outfit", sans-serif;
+}
+.lead2 {
+  font-size: 16px;
+  padding: 16px 0px 0px;
+  color: #415069;
+  font-family: "Outfit", sans-serif;
 }
